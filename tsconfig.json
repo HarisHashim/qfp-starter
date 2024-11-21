@@ -1,0 +1,16 @@
+{
+  "extends": "@quasar/app-vite/tsconfig-preset.json",
+  "include": ["src/**/*"],
+  "exclude": [
+    "./dist",
+    "./.quasar",
+    "./node_modules",
+    "./src-capacitor",
+    "./src-cordova",
+    "./quasar.config.*.temporary.compiled*"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": false
+  }
+}
