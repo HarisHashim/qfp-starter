@@ -8,7 +8,7 @@ Credits go to original authors of these wonderful repos. Both source are modifie
 
 To run the starter, should be something like this; cross your finger and knock lots of woods!
 
-1. Run npm install on sub project in backe-end sub folder.
+1. Run npm install on sub project in back-end sub folder.
 2. Run npm install on the main project.
 3. do `npm run bundle` in console inside the main project folder.
 4. do `npm run back-end` inside the main project folder.
