@@ -11,7 +11,7 @@
     "dev": "npx quasar dev",
     "build": "quasar build",
     "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
-    "bundle": "npm ---prefix ./back-end run compile && npm ---prefix ./back-end  pack --pack-destination ./ && npm install back-end-0.0.0.tgz",
+    "bundle": "npm ---prefix ./back-end run bundle && npm install back-end-0.0.0.tgz",
     "back-end": "npm ---prefix ./back-end run dev"
   },
   "dependencies": {
