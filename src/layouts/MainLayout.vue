@@ -11,7 +11,7 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title> Hello World! </q-toolbar-title>
+        <q-toolbar-title>QFP Starter</q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
 
