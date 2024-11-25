@@ -131,6 +131,7 @@
     "useAttrs": true,
     "useAuth": true,
     "useAuthStore": true,
+    "useBackup": true,
     "useBase64": true,
     "useBattery": true,
     "useBluetooth": true,

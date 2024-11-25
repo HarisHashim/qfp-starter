@@ -1,18 +1,7 @@
 <template>
-  <q-scroll-area
-    ref="userlistRef"
-    style="height: 100%;"
-  >
-    <q-list
-      dense
-      padding
-      class="rounded-border"
-    >
-      <q-item
-        v-for="user in sortedUsers"
-        :key="user.id"
-        v-ripple
-      >
+  <q-scroll-area ref="userlistRef" style="height: 100%">
+    <q-list dense padding class="rounded-border">
+      <q-item v-for="user in sortedUsers" :key="user.id" v-ripple>
         <q-item-section avatar>
           <q-img
             :src="user.avatar"
@@ -29,14 +18,16 @@
 </template>
 
 <script setup lang="ts">
-import { User as TUser } from 'feathers-chat'
+import { User as TUser } from 'back-end'
 const { api } = useFeathers()
 
 const User = api.service('users')
 
 const userlistRef = ref()
 const users: TUser[] = reactive([])
-const sortedUsers = computed(() => users.sort((a, b) => a.email < b.email ? -1 : 1))
+const sortedUsers = computed(() =>
+  users.sort((a, b) => (a.email < b.email ? -1 : 1))
+)
 
 const params = computed(() => {
   return {
@@ -57,14 +48,13 @@ onMounted(async () => {
   await loadUserList()
 })
 
-async function loadUserList () {
+async function loadUserList() {
   users.length = 0
-  await find({ query: { $limit: 250 } })
-  users.push(...data.value)
-  // eslint-disable-next-line
-  while (canNext.value) {
+  await find() // { query: { $limit: 250 } })
+  users.push(...(data as TUser[]))
+  while (canNext) {
     await next()
-    users.push(...data.value)
+    users.push(...(data as TUser[]))
   }
 }
 </script>

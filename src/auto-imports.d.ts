@@ -128,6 +128,7 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useAuth: typeof import('feathers-pinia')['useAuth']
   const useAuthStore: typeof import('./stores/auth')['useAuthStore']
+  const useBackup: typeof import('feathers-pinia')['useBackup']
   const useBase64: typeof import('@vueuse/core')['useBase64']
   const useBattery: typeof import('@vueuse/core')['useBattery']
   const useBluetooth: typeof import('@vueuse/core')['useBluetooth']
@@ -425,6 +426,7 @@ declare module 'vue' {
     readonly useAttrs: UnwrapRef<typeof import('vue')['useAttrs']>
     readonly useAuth: UnwrapRef<typeof import('feathers-pinia')['useAuth']>
     readonly useAuthStore: UnwrapRef<typeof import('./stores/auth')['useAuthStore']>
+    readonly useBackup: UnwrapRef<typeof import('feathers-pinia')['useBackup']>
     readonly useBase64: UnwrapRef<typeof import('@vueuse/core')['useBase64']>
     readonly useBattery: UnwrapRef<typeof import('@vueuse/core')['useBattery']>
     readonly useBluetooth: UnwrapRef<typeof import('@vueuse/core')['useBluetooth']>
