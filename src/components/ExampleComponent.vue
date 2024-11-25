@@ -26,7 +26,7 @@ const { total } = Message.useFind(messageParams, {
   paginateOn: 'server',
   immediate: true
 })
-const messages = computed(
-  () => Message.findInStore({ query: {} }).data.values // .reverse()
+const messages = computed(() =>
+  Message.findInStore({ query: {} }).data.reverse()
 )
 </script>
