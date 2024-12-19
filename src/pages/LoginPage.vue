@@ -79,13 +79,6 @@ const state = reactive({
 const submit = async () => {
   authStore.clearError()
   await authStore.authenticate({ strategy: 'local', ...state })
-  // .then((result) => {
-  //   // console.log('result is ', JSON.stringify(result.accessToken, null, '\t'))
-  //   // console.log('user is ', JSON.stringify(authStore.user, null, '\t'))
-  // })
-  // .catch((error) => {
-  //   console.log('error is ', JSON.stringify(error, null, '\t'))
-  // })
   redirect()
 }
 const redirect = async () => {

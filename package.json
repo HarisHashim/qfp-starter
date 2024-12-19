@@ -22,7 +22,7 @@
     "@vueuse/core": "^9.13.0",
     "back-end": "file:back-end-0.0.0.tgz",
     "feathers-hooks-common": "^7.0.1",
-    "feathers-pinia": "^3.0.0-pre.7",
+    "feathers-pinia": "^4.5.4",
     "pinia": "^2.0.33",
     "quasar": "^2.17.4",
     "socket.io-client": "^4.6.1",

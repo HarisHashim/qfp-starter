@@ -1,19 +1,8 @@
 <template>
-  <div
-    v-if="messages"
-    class="q-ml-md"
-    style="height: 85vh;"
-  >
+  <div v-if="messages" class="q-ml-md" style="height: 85vh">
     Messages ({{ total }}):
-    <q-scroll-area
-      ref="scrollAreaRef"
-      class="q-px-md"
-      style="height: 100%"
-    >
-      <div
-        v-for="message in messages"
-        :key="message.id"
-      >
+    <q-scroll-area ref="scrollAreaRef" class="q-px-md" style="height: 100%">
+      <div v-for="message in messages" :key="message.id">
         <q-chat-message
           v-if="message.text && message.user && userId"
           :name="message.user.id === userId ? 'me' : message.user.email"
@@ -48,8 +37,16 @@ const messageParams = computed(() => {
   return params
 })
 
-const { total } = Message.useFind(messageParams, { paginateOnServer: true, immediate: true })
-const messages = computed(() => Message.findInStore({ query: { $sort: { createdAt: -1 } } }).data.value.reverse())
+const { total } = Message.useFind(messageParams, {
+  paginateOn: 'server',
+  immediate: true
+})
+
+const messages = computed(() =>
+  Message.findInStore({
+    query: { $sort: { createdAt: -1 } }
+  }).data.reverse()
+)
 
 Message.on('created', async () => scroll())
 
@@ -59,7 +56,7 @@ onMounted(async () => {
   }, 150)
 })
 
-function scroll () {
+function scroll() {
   if (scrollAreaRef === undefined) return
 
   if (scrollAreaRef.value) {

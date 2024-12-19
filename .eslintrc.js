@@ -110,6 +110,7 @@ module.exports = {
     'vue/max-attributes-per-line': 'off',
     'vue/singleline-html-element-content-newline': 'off',
     'vue/multiline-html-element-content-newline': 'off',
+    'no-unmodified-loop-condition': 'off',
     '@typescript-eslint/no-empty-object-type': 'off'
   }
 }

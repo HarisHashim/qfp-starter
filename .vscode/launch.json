@@ -5,13 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "preLaunchTask": "npm: dev",
-      "type": "chrome",
-      "request": "launch",
       "name": "Debug in Chrome",
+      "request": "launch",
+      "type": "chrome",
+      "preLaunchTask": "npm: dev",
       "url": "http://localhost:9000",
       "webRoot": "${workspaceFolder}",
-      "userDataDir": false,
+      "userDataDir": "${workspaceFolder}/.vscode/chrome-profile",
       "runtimeArgs": ["--preserve-symlinks"],
       "resolveSourceMapLocations": [
         "${workspaceFolder}/**",
