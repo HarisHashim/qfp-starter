@@ -9,10 +9,15 @@ Credits go to original authors of these wonderful repos. Both source are modifie
 To run the starter, should be something like this; cross your finger and knock lots of woods!
 
 1. Run npm install on sub project in back-end sub folder.
-2. Run npm install on the main project.
-3. do `npm run bundle` in console inside the main project folder.
-4. do `npm run back-end` inside the main project folder.
-5. In vscode "Run & Debug" panel, run "Debug in Chrome" as configurd in launch.json. There will be a prompt "Waiting for prelauncTask ...". Just click debug anyway.
+2. Do migration and seeding in back-end sub folder.
+   ```
+   npx knex migrate:latest
+   npx knex:seed run
+   ```
+3. Do `npm run bundle` in console inside the main project folder.
+4. Run npm install on the main project.
+5. Do `npm run back-end` inside the main project folder.
+6. In vscode "Run & Debug" panel, run "Debug in Chrome" as configurd in launch.json. There will be a prompt "Waiting for prelauncTask ...". Just click debug anyway.
 
 Above steps will work assuming that database is configured and created correctly. I am going to leave that as an excercise that probably will take sometime for those not familiar with Feathers JS. Please refer to `back-end\config\default.json` for a starting point.
 

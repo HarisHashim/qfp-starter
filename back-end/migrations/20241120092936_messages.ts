@@ -6,6 +6,12 @@ export async function up(knex: Knex): Promise<void> {
     table.increments('id')
 
     table.string('text')
+
+    table.integer('userId').unsigned().notNullable()
+    table.foreign('userId').references('id').inTable('users')
+
+    table.string('user', 255).nullable()
+    table.bigInteger('createdAt')
   })
 }
 
